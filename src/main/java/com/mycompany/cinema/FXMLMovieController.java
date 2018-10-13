@@ -5,7 +5,6 @@
  */
 package com.mycompany.cinema;
 
-
 import java.net.URL;
 import java.sql.*;
 import java.text.*;
@@ -102,15 +101,15 @@ public class FXMLMovieController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         //set title
         todayTitle.setText("SHOWING MOVIES FOR : " + getDateTitle()); //set main title for movieScene
-        //doad
+        cleanButtons();
         databaseSourceGarrett();//Load data from server
         setVisible();
 
     }
 
     public void setVisible() {
-        
-          //Set movie 1
+
+        //Set movie 1
         if (movie1String != null && !movie1String.isEmpty()) {
             //if not do this
             movie1.setText(movie1String);
@@ -118,7 +117,7 @@ public class FXMLMovieController implements Initializable {
             //if empty make disappear
             movie1.setVisible(false);
         }
-          //Set movie 2
+        //Set movie 2
         if (movie2String != null && !movie2String.isEmpty()) {
             //if not do this
             movie2.setText(movie2String);
@@ -134,7 +133,7 @@ public class FXMLMovieController implements Initializable {
             //if empty make disappear
             movie3.setVisible(false);
         }
-           //Set movie 4
+        //Set movie 4
         if (movie4String != null && !movie4String.isEmpty()) {
             //if not do this
             movie4.setText(movie4String);
@@ -142,7 +141,7 @@ public class FXMLMovieController implements Initializable {
             //if empty make disappear
             movie4.setVisible(false);
         }
-           //Set movie 5
+        //Set movie 5
         if (movie5String != null && !movie5String.isEmpty()) {
             //if not do this
             movie5.setText(movie5String);
@@ -150,7 +149,7 @@ public class FXMLMovieController implements Initializable {
             //if empty make disappear
             movie5.setVisible(false);
         }
-           //Set movie 6
+        //Set movie 6
         if (movie6String != null && !movie6String.isEmpty()) {
             //if not do this
             movie6.setText(movie6String);
@@ -158,7 +157,7 @@ public class FXMLMovieController implements Initializable {
             //if empty make disappear
             movie6.setVisible(false);
         }
-           //Set movie 7
+        //Set movie 7
         if (movie7String != null && !movie7String.isEmpty()) {
             //if not do this
             movie7.setText(movie7String);
@@ -166,7 +165,7 @@ public class FXMLMovieController implements Initializable {
             //if empty make disappear
             movie7.setVisible(false);
         }
-           //Set movie 8
+        //Set movie 8
         if (movie8String != null && !movie8String.isEmpty()) {
             //if not do this
             movie8.setText(movie8String);
@@ -174,7 +173,7 @@ public class FXMLMovieController implements Initializable {
             //if empty make disappear
             movie8.setVisible(false);
         }
-           //Set movie 9
+        //Set movie 9
         if (movie9String != null && !movie9String.isEmpty()) {
             //if not do this
             movie9.setText(movie9String);
@@ -182,11 +181,8 @@ public class FXMLMovieController implements Initializable {
             //if empty make disappear
             movie9.setVisible(false);
         }
-        
-       
-    }
-    
 
+    }
 
     //Retrieving Data from the database
     public void databaseSourceGarrett() {
@@ -221,7 +217,7 @@ public class FXMLMovieController implements Initializable {
                 //setting text to buttons and movie texts
                 if (count == 1) {
                     //set Varialble
-                   movie1String = movieTitle;
+                    movie1String = movieTitle;
                 } else if (count == 2) {
                     //set Varialble
                     movie2String = movieTitle;
@@ -232,7 +228,7 @@ public class FXMLMovieController implements Initializable {
                     //set Varialble
                     movie4String = movieTitle;
                 } else if (count == 5) {
-                   //set Varialble
+                    //set Varialble
                     movie5String = movieTitle;
                 } else if (count == 6) {
                     //set Varialble
@@ -250,10 +246,23 @@ public class FXMLMovieController implements Initializable {
                 }
 
             }
-           
+
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+
+    }
+
+    public void cleanButtons() {
+        movie1String = "";
+        movie2String = "";
+        movie3String = "";
+        movie4String = "";
+        movie5String = "";
+        movie6String = "";
+        movie7String = "";
+        movie8String = "";
+        movie9String = "";
 
     }
 
@@ -269,7 +278,8 @@ public class FXMLMovieController implements Initializable {
 
         return movie;//return the day that the user picked
     }
-    public String getDateTitle(){
+
+    public String getDateTitle() {
         return date.getTitleDate();
     }
 
