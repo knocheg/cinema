@@ -145,22 +145,27 @@ public class FXMLDateController implements Initializable {
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
         topCenterButton.setText(df2.format(todayDate.getTime()));
+        topCenterTitle = df2.format(todayDate.getTime());
        
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
         topRightButton.setText(df2.format(todayDate.getTime()));
+        topRightTitle = df2.format(todayDate.getTime());
         
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
         bottomLeftButton.setText(df2.format(todayDate.getTime()));
+        bottomLeftTitle = df2.format(todayDate.getTime());
        
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
         bottomCenterButton.setText(df2.format(todayDate.getTime()));
+        bottomCenterTitle = df2.format(todayDate.getTime());
        
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
         bottomRightButton.setText(df2.format(todayDate.getTime()));
+        bottomRightTitle = df2.format(todayDate.getTime());
         
     }
         //setting the titles of the buttons
@@ -199,6 +204,7 @@ public class FXMLDateController implements Initializable {
     }
     public String getTitleDate(){
         String titleDate = titlePicked;
+        System.out.println(titlePicked);
         return titleDate;
     }
 
