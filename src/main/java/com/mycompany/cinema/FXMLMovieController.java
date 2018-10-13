@@ -112,6 +112,7 @@ public class FXMLMovieController implements Initializable {
         //Set movie 1
         if (movie1String != null && !movie1String.isEmpty()) {
             //if not do this
+            movie1.setVisible(true);
             movie1.setText(movie1String);
         } else {
             //if empty make disappear
@@ -120,6 +121,7 @@ public class FXMLMovieController implements Initializable {
         //Set movie 2
         if (movie2String != null && !movie2String.isEmpty()) {
             //if not do this
+            movie2.setVisible(true);
             movie2.setText(movie2String);
         } else {
             //if empty make disappear
@@ -128,6 +130,7 @@ public class FXMLMovieController implements Initializable {
         //Set movie 3
         if (movie3String != null && !movie3String.isEmpty()) {
             //if not do this
+            movie3.setVisible(true);
             movie3.setText(movie3String);
         } else {
             //if empty make disappear
@@ -136,6 +139,7 @@ public class FXMLMovieController implements Initializable {
         //Set movie 4
         if (movie4String != null && !movie4String.isEmpty()) {
             //if not do this
+            movie4.setVisible(true);
             movie4.setText(movie4String);
         } else {
             //if empty make disappear
@@ -144,6 +148,7 @@ public class FXMLMovieController implements Initializable {
         //Set movie 5
         if (movie5String != null && !movie5String.isEmpty()) {
             //if not do this
+            movie5.setVisible(true);
             movie5.setText(movie5String);
         } else {
             //if empty make disappear
@@ -152,6 +157,7 @@ public class FXMLMovieController implements Initializable {
         //Set movie 6
         if (movie6String != null && !movie6String.isEmpty()) {
             //if not do this
+            movie6.setVisible(true);
             movie6.setText(movie6String);
         } else {
             //if empty make disappear
@@ -160,6 +166,7 @@ public class FXMLMovieController implements Initializable {
         //Set movie 7
         if (movie7String != null && !movie7String.isEmpty()) {
             //if not do this
+            movie7.setVisible(true);
             movie7.setText(movie7String);
         } else {
             //if empty make disappear
@@ -168,6 +175,7 @@ public class FXMLMovieController implements Initializable {
         //Set movie 8
         if (movie8String != null && !movie8String.isEmpty()) {
             //if not do this
+            movie8.setVisible(true);
             movie8.setText(movie8String);
         } else {
             //if empty make disappear
@@ -176,6 +184,7 @@ public class FXMLMovieController implements Initializable {
         //Set movie 9
         if (movie9String != null && !movie9String.isEmpty()) {
             //if not do this
+            movie9.setVisible(true);
             movie9.setText(movie9String);
         } else {
             //if empty make disappear
