@@ -185,6 +185,8 @@ public class FXMLMovieController implements Initializable {
         
        
     }
+    
+
 
     //Retrieving Data from the database
     public void databaseSourceGarrett() {

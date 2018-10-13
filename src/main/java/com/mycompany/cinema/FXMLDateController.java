@@ -36,7 +36,7 @@ public class FXMLDateController implements Initializable {
     //Buttons 
     //@FXML
     public Button todayButton, topCenterButton, topRightButton, bottomLeftButton, bottomCenterButton, bottomRightButton;
-    public static String todayString, topCenterString, topRightString, bottomLeftString, bottomCenterString, bottomRightString, dayPicked;
+    public static String todayString, topCenterString, topRightString, bottomLeftString, bottomCenterString, bottomRightString, dayPicked, todayOnlyButton;
     //public String dayPicked;
     //Set Today's Date
 
@@ -128,32 +128,34 @@ public class FXMLDateController implements Initializable {
     //setting the titles of the buttons
     public void setDateTitles() {
         DateFormat df = new SimpleDateFormat("dd MM yyyy");
+        DateFormat df2 = new SimpleDateFormat("EE, dd");
 
         Calendar todayDate = Calendar.getInstance();
 
         todayString = df.format(todayDate.getTime());
+        todayOnlyButton = df2.format(todayDate.getTime());
 
         //Date Button Titles
-        todayButton.setText(todayString);
+        todayButton.setText(todayOnlyButton);
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
-        topCenterButton.setText(df.format(todayDate.getTime()));
+        topCenterButton.setText(df2.format(todayDate.getTime()));
         topCenterString = df.format(todayDate.getTime());
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
-        topRightButton.setText(df.format(todayDate.getTime()));
+        topRightButton.setText(df2.format(todayDate.getTime()));
         topRightString = df.format(todayDate.getTime());
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
-        bottomLeftButton.setText(df.format(todayDate.getTime()));
+        bottomLeftButton.setText(df2.format(todayDate.getTime()));
         bottomLeftString = df.format(todayDate.getTime());
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
-        bottomCenterButton.setText(df.format(todayDate.getTime()));
+        bottomCenterButton.setText(df2.format(todayDate.getTime()));
         bottomCenterString = df.format(todayDate.getTime());
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
-        bottomRightButton.setText(df.format(todayDate.getTime()));
+        bottomRightButton.setText(df2.format(todayDate.getTime()));
         bottomRightString = df.format(todayDate.getTime());
     }
 
