@@ -5,35 +5,26 @@
  */
 package com.mycompany.cinema;
 
-import static com.mycompany.cinema.FXMLDateController.dayPicked;
-import static com.mycompany.cinema.FXMLDateController.todayString;
+
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.sql.*;
+import java.text.*;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.event.*;
+import javafx.fxml.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 /**
  *
- * @author rgonz
+ * @authorrgonz
  */
 public class FXMLMovieController implements Initializable {
 
     //Buttons 
     @FXML
     public Button backButton, movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9;
-    public static String moviePicked, movie1String = "", movie2String = "", movie3String = "", movie4String, movie5String, movie6String, movie7String, movie8String, movie9String;
+    public static String moviePicked, movie1String, movie2String, movie3String, movie4String, movie5String, movie6String, movie7String, movie8String, movie9String;
     //TITLE LABEL
     public Label todayTitle = new Label();
 
