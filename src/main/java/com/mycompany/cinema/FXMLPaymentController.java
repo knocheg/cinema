@@ -4,9 +4,17 @@
  * and open the template in the editor.
  */
 package com.mycompany.cinema;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,7 +42,7 @@ public class FXMLPaymentController implements Initializable {
     @FXML
     public TextField nameOnCard, creditCardNumber, expirationDateNumber, cardPin;
 
-    public String nameCard, creditNumber, expirationNumber, cardPinNumber, movieTitles, movieDate, moviePrice, movieTime;
+    public String nameCard, creditNumber, expirationNumber, cardPinNumber, movieTitles, movieDate, moviePrice, movieTime, credit;
 
     //Action Buttons---------------------------------------------------->
     @FXML
@@ -48,10 +56,9 @@ public class FXMLPaymentController implements Initializable {
         getNames();
         //set names to variables
         setNames();
-        //print tickets
-        printTicket(movieTitles, movieDate, moviePrice, movieTime, getAuNumber(), getOrderNumber(), getTicketNumber(), nameCard);
-        //go to final scene
-        mainApp.initialLayout("/fxml/Thank.fxml");
+        //credit card search
+        creditCardAuth();
+
     }
 
     //INITIALIZE------------------------------------------>
@@ -65,6 +72,7 @@ public class FXMLPaymentController implements Initializable {
 
     }
 
+    //getting names from text fields
     public void getNames() {
         //set names
         nameCard = nameOnCard.getText();
@@ -75,11 +83,63 @@ public class FXMLPaymentController implements Initializable {
 
     }
 
+    //set names for ticket info
     public void setNames() {
         movieTitles = getMovie();
         movieDate = getDate();
         movieTime = getTime();
         moviePrice = getPrice();
+
+    }
+
+    public void creditCardAuth() throws IOException {
+        String credit1;
+
+        String runSQL = String.format("SELECT * FROM CREDIT_CARD WHERE CC_EXP_DATE = '%s' AND CC_NUMBER = %s", expirationNumber, creditNumber);
+        System.out.println(expirationNumber);
+        System.out.println(creditNumber);
+        //Registering the Driver
+        try {
+            Driver myDriver = new com.mysql.jdbc.Driver();
+            DriverManager.registerDriver(myDriver);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            System.out.println("Driver Not Registered - Check you mysql-connector file is located under the CLASSPATH OF JDK");
+        }
+        ///Connecting to the Garrett server -database-
+        try {
+            //database credentials
+            String URL = "jdbc:mysql://group-g.g-knoche.com/CINEMA";
+            String USER = "rafael";
+            String PASS = "rafaelcmsc495";
+            //stablish connection
+            Connection conn = DriverManager.getConnection(URL, USER, PASS);
+            Statement stmt = conn.createStatement(); //set statements
+            ResultSet rs = stmt.executeQuery(runSQL);//compile and execute statements
+            //setting the button texts with movies as it scans the database;
+            while (rs.next()) {
+
+                credit = rs.getString("CC_NUMBER");
+                System.out.println(credit);
+
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+
+        //credit card authorization
+        if (Objects.equals(credit, creditNumber)) {
+
+            //print tickets
+            printTicket(movieTitles, movieDate, moviePrice, movieTime, getAuNumber(), getOrderNumber(), getTicketNumber(), nameCard);
+            //go to final scene
+            mainApp.initialLayout("/fxml/Thank.fxml");
+            System.out.println("success");
+
+        } else {
+            System.out.println("no success");
+        }
 
     }
 
@@ -103,6 +163,7 @@ public class FXMLPaymentController implements Initializable {
         FileUtils.writeStringToFile(newHtmlFile, htmlString);
     }
 
+    //Setting random numbers for identification
     public String getTicketNumber() {
         Random ticketRandom = new Random();
         String getTicketNumber;
@@ -110,21 +171,21 @@ public class FXMLPaymentController implements Initializable {
         getTicketNumber = Integer.toString(ticketNumber);
         return "cinema-T " + getTicketNumber;
     }
-    
-     public String getOrderNumber() {
+
+    public String getOrderNumber() {
         Random oRandom = new Random();
         String getONumber;
         int orderNumber = oRandom.nextInt(10000000);
         getONumber = Integer.toString(orderNumber);
-        return "CN" +getONumber;
+        return "O: " + getONumber;
     }
-     
-      public String getAuNumber() {
+
+    public String getAuNumber() {
         Random aRandom = new Random();
         String getANumber;
         int auditoryNumber = aRandom.nextInt(20);
         getANumber = Integer.toString(auditoryNumber);
-        return "CN" +getANumber;
+        return "A- " + getANumber;
     }
 
     //getters-------------------------->

@@ -46,11 +46,11 @@ public class FXMLMovieController implements Initializable {
     private void startAction(ActionEvent event) throws Exception {
         mainApp.initialLayout("/fxml/Scene.fxml");
     }
-      @FXML
+
+    @FXML
     private void goBack(ActionEvent event) throws Exception {
         mainApp.initialLayout("/fxml/Date.fxml");
     }
-    
 
     @FXML
     private void movieOne(ActionEvent event) throws Exception {
@@ -135,11 +135,11 @@ public class FXMLMovieController implements Initializable {
             String USER = "rafael";
             String PASS = "rafaelcmsc495";
             String SQLTORUN = ""; //this is the string we will build the query in            
-//stablish connection
+            //stablish connection
             Connection conn = DriverManager.getConnection(URL, USER, PASS);
             Statement stmt = conn.createStatement(); //set statements
-            SQLTORUN = "SELECT MOVIE_TITLE FROM MOVIES,SHOWS WHERE MOVIE_ID =SHOW_MOVIE_ID AND SHOW_DATE_ONLY = " ;//sq; statement with all but date
-            SQLTORUN = SQLTORUN + "'" + getDate() +"'" + ";"; // need to get the date selected in the DateController in dd mm yyyy format into this statement  help!!!!
+            SQLTORUN = "SELECT MOVIE_TITLE FROM MOVIES,SHOWS WHERE MOVIE_ID = SHOW_MOVIE_ID AND SHOW_DATE_ONLY = ";//sq; statement with all but date
+            SQLTORUN = SQLTORUN + "'" + getDate() + "'" + ";"; // need to get the date selected in the DateController in dd mm yyyy format into this statement  help!!!!
             System.out.println(SQLTORUN);
             ResultSet rs = stmt.executeQuery(SQLTORUN);//compile and execute statements
             //setting the button texts with movies as it scans the database;
@@ -177,7 +177,7 @@ public class FXMLMovieController implements Initializable {
                 }
 
             }
-System.out.println("count is"+count);
+            System.out.println("count is" + count);
         } catch (SQLException ex) {
             System.out.println(ex);
         }
@@ -192,8 +192,8 @@ System.out.println("count is"+count);
 
     //getter method for movie picked
     public String getMovieString() {
-      String movie = moviePicked;
-   
+        String movie = moviePicked;
+
         return movie;//return the day that the user picked
     }
 

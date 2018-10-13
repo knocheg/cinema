@@ -76,13 +76,6 @@ public class MainApp extends Application {
 
     }
 
-    //Final Scene "thank you"
-    public void viewThankyouScene() throws Exception {
-
-        String sceneLayout = "/fxml/Thank.fxml";
-        initialLayout(sceneLayout);
-
-    }
 
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
