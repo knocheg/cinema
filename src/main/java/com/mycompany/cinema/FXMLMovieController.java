@@ -101,7 +101,7 @@ public class FXMLMovieController implements Initializable {
 
     public void initialize(URL url, ResourceBundle rb) {
         //set title
-        todayTitle.setText("SHOWING MOVIES FOR : " + getDate()); //set main title for movieScene
+        todayTitle.setText("SHOWING MOVIES FOR : " + getDateTitle()); //set main title for movieScene
         //doad
         databaseSourceGarrett();//Load data from server
         setVisible();
@@ -268,6 +268,9 @@ public class FXMLMovieController implements Initializable {
         String movie = moviePicked;
 
         return movie;//return the day that the user picked
+    }
+    public String getDateTitle(){
+        return date.getTitleDate();
     }
 
 }

@@ -143,7 +143,7 @@ public class FXMLTicketController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ticketMovie.setText(getMovie());//set movie title
-        ticketDate.setText(getDate());//set date title
+        ticketDate.setText(date.getTitleDate());//set date title
         ticketTime.setText(getTime());//set time title
         adult = 0;
         senior = 0;

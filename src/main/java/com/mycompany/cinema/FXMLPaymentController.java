@@ -16,7 +16,7 @@ import javafx.scene.control.*;
 import org.apache.commons.io.FileUtils;
 import java.util.Random;
 
-/**ddd
+/**
  *
  * @author rgonz
  */

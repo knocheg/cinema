@@ -108,7 +108,7 @@ public class FXMLTimeController implements Initializable {
 
     public void initialize(URL url, ResourceBundle rb) {
 
-        datePicked.setText(getDate());
+        datePicked.setText(date.getTitleDate());
         moviePicked.setText(getMovie());
         setTimeTitles();
 
