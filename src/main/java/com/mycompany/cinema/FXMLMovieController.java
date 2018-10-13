@@ -33,7 +33,7 @@ public class FXMLMovieController implements Initializable {
     //Buttons 
     @FXML
     public Button backButton, movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9;
-    public static String moviePicked, movie1String, movie2String, movie3String, movie4String, movie5String, movie6String, movie7String, movie8String, movie9String;
+    public static String moviePicked, movie1String = "", movie2String = "", movie3String = "", movie4String, movie5String, movie6String, movie7String, movie8String, movie9String;
     //TITLE LABEL
     public Label todayTitle = new Label();
 
@@ -113,7 +113,86 @@ public class FXMLMovieController implements Initializable {
         todayTitle.setText("SHOWING MOVIES FOR : " + getDate()); //set main title for movieScene
         //doad
         databaseSourceGarrett();//Load data from server
+        setVisible();
 
+    }
+
+    public void setVisible() {
+        
+          //Set movie 1
+        if (movie1String != null && !movie1String.isEmpty()) {
+            //if not do this
+            movie1.setText(movie1String);
+        } else {
+            //if empty make disappear
+            movie1.setVisible(false);
+        }
+          //Set movie 2
+        if (movie2String != null && !movie2String.isEmpty()) {
+            //if not do this
+            movie2.setText(movie2String);
+        } else {
+            //if empty make disappear
+            movie2.setVisible(false);
+        }
+        //Set movie 3
+        if (movie3String != null && !movie3String.isEmpty()) {
+            //if not do this
+            movie3.setText(movie3String);
+        } else {
+            //if empty make disappear
+            movie3.setVisible(false);
+        }
+           //Set movie 4
+        if (movie4String != null && !movie4String.isEmpty()) {
+            //if not do this
+            movie4.setText(movie4String);
+        } else {
+            //if empty make disappear
+            movie4.setVisible(false);
+        }
+           //Set movie 5
+        if (movie5String != null && !movie5String.isEmpty()) {
+            //if not do this
+            movie5.setText(movie5String);
+        } else {
+            //if empty make disappear
+            movie5.setVisible(false);
+        }
+           //Set movie 6
+        if (movie6String != null && !movie6String.isEmpty()) {
+            //if not do this
+            movie6.setText(movie6String);
+        } else {
+            //if empty make disappear
+            movie6.setVisible(false);
+        }
+           //Set movie 7
+        if (movie7String != null && !movie7String.isEmpty()) {
+            //if not do this
+            movie7.setText(movie7String);
+        } else {
+            //if empty make disappear
+            movie7.setVisible(false);
+        }
+           //Set movie 8
+        if (movie8String != null && !movie8String.isEmpty()) {
+            //if not do this
+            movie8.setText(movie8String);
+        } else {
+            //if empty make disappear
+            movie8.setVisible(false);
+        }
+           //Set movie 9
+        if (movie9String != null && !movie9String.isEmpty()) {
+            //if not do this
+            movie9.setText(movie9String);
+        } else {
+            //if empty make disappear
+            movie9.setVisible(false);
+        }
+        
+       
     }
 
     //Retrieving Data from the database
@@ -148,36 +227,37 @@ public class FXMLMovieController implements Initializable {
                 movieTitle = rs.getString("MOVIE_TITLE");
                 //setting text to buttons and movie texts
                 if (count == 1) {
-                    movie1.setText(movieTitle);
-                    movie1String = movieTitle;
+                    //set Varialble
+                   movie1String = movieTitle;
                 } else if (count == 2) {
-                    movie2.setText(movieTitle);
+                    //set Varialble
                     movie2String = movieTitle;
                 } else if (count == 3) {
-                    movie3.setText(movieTitle);
+                    //set Varialble
                     movie3String = movieTitle;
                 } else if (count == 4) {
-                    movie4.setText(movieTitle);
+                    //set Varialble
                     movie4String = movieTitle;
                 } else if (count == 5) {
-                    movie5.setText(movieTitle);
+                   //set Varialble
                     movie5String = movieTitle;
                 } else if (count == 6) {
-                    movie6.setText(movieTitle);
+                    //set Varialble
                     movie6String = movieTitle;
                 } else if (count == 7) {
-                    movie7.setText(movieTitle);
+                    //set Varialble
                     movie7String = movieTitle;
                 } else if (count == 8) {
-                    movie8.setText(movieTitle);
+                    //set Varialble
                     movie8String = movieTitle;
                 } else if (count == 9) {
-                    movie9.setText(movieTitle);
+                    //set Varialble
                     movie9String = movieTitle;
+
                 }
 
             }
-            System.out.println("count is" + count);
+           
         } catch (SQLException ex) {
             System.out.println(ex);
         }

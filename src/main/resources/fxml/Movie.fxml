@@ -18,7 +18,7 @@
                 <Font size="16.0" />
             </font>
         </Button>
-        <Label fx:id="todayTitle" layoutX="154.0" layoutY="14.0" prefHeight="50.0" prefWidth="449.0" text="d" textAlignment="CENTER">
+        <Label fx:id="todayTitle" layoutX="35.0" layoutY="14.0" prefHeight="50.0" prefWidth="644.0" text="d" textAlignment="CENTER">
             <font>
                 <Font name="Arial" size="26.0" />
             </font> 
