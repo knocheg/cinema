@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.cinema.FXMLDateController">
+    <children>
+        <Button fx:id="todayButton" layoutX="78.0" layoutY="129.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#todayButton" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="topCenterButton" layoutX="273.0" layoutY="127.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#topCenterButton" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="bottomLeftButton" layoutX="78.0" layoutY="250.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#bottomLeftButton" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="topRightButton" layoutX="469.0" layoutY="127.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#topRightButton" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="bottomCenterButton" layoutX="273.0" layoutY="250.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#bottomCenterButton" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="bottomRightButton" layoutX="469.0" layoutY="250.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#bottomRightButton" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Text layoutX="196.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Date" textAlignment="CENTER" wrappingWidth="306">
+            <font>
+                <Font name="Arial" size="26.0" />
+            </font>
+        </Text>
+        <Button layoutX="273.0" layoutY="406.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#startAction" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="Start Over">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+      <Separator layoutX="32.0" layoutY="81.0" prefHeight="0.0" prefWidth="634.0" />
+      <Separator layoutX="33.0" layoutY="371.0" prefHeight="0.0" prefWidth="634.0" />
+    </children>
+</Pane>

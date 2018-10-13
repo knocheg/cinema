@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.cinema.FXMLTicketController">
+   <children>
+      <Text layoutX="179.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Number of Tickets" textAlignment="CENTER" wrappingWidth="330">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="78.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adult" textAlignment="CENTER" wrappingWidth="135">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Text>
+      <Button layoutX="230.0" layoutY="170.0" maxHeight="100.0" maxWidth="206.0" mnemonicParsing="false" onAction="#adultAdd" prefHeight="31.0" prefWidth="35.0" stylesheets="@../styles/Styles.css" text="+" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="362.0" layoutY="170.0" maxHeight="100.0" maxWidth="206.0" mnemonicParsing="false" onAction="#adultSub" prefHeight="31.0" prefWidth="35.0" stylesheets="@../styles/Styles.css" text="-" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Separator layoutX="540.0" layoutY="180.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Separator layoutX="337.0" layoutY="-197.0" orientation="VERTICAL" prefHeight="600.0" rotate="90.0" />
+      <Separator layoutX="427.0" layoutY="180.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Separator layoutX="208.0" layoutY="180.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Button layoutX="363.0" layoutY="230.0" maxHeight="100.0" maxWidth="206.0" mnemonicParsing="false" onAction="#seniorSub" prefHeight="31.0" prefWidth="35.0" stylesheets="@../styles/Styles.css" text="-" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="230.0" layoutY="230.0" maxHeight="100.0" maxWidth="206.0" mnemonicParsing="false" onAction="#seniorAdd" prefHeight="31.0" prefWidth="35.0" stylesheets="@../styles/Styles.css" text="+" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Text layoutX="78.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senior" textAlignment="CENTER" wrappingWidth="138">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Text>
+      <Button layoutX="363.0" layoutY="290.0" maxHeight="100.0" maxWidth="206.0" mnemonicParsing="false" onAction="#veteranSub" prefHeight="31.0" prefWidth="35.0" stylesheets="@../styles/Styles.css" text="-" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="230.0" layoutY="290.0" maxHeight="100.0" maxWidth="206.0" mnemonicParsing="false" onAction="#veteranAdd" prefHeight="31.0" prefWidth="35.0" stylesheets="@../styles/Styles.css" text="+" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Text layoutX="78.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veteran" textAlignment="CENTER" wrappingWidth="138">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Text>
+      <Button layoutX="365.0" layoutY="350.0" maxHeight="100.0" maxWidth="206.0" mnemonicParsing="false" onAction="#childSub" prefHeight="31.0" prefWidth="35.0" stylesheets="@../styles/Styles.css" text="-" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="230.0" layoutY="350.0" maxHeight="100.0" maxWidth="206.0" mnemonicParsing="false" onAction="#childAdd" prefHeight="31.0" prefWidth="35.0" stylesheets="@../styles/Styles.css" text="+" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Text layoutX="78.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Child" textAlignment="CENTER" wrappingWidth="138">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Text>
+      <Separator layoutX="362.0" layoutY="95.0" orientation="VERTICAL" prefHeight="600.0" rotate="90.0" />
+      <Text layoutX="446.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total:" textAlignment="CENTER" wrappingWidth="85">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Text>
+      <Button layoutX="211.0" layoutY="413.0" maxHeight="100.0" maxWidth="232.0" mnemonicParsing="false" onAction="#payButton" prefHeight="60.0" prefWidth="232.0" stylesheets="@../styles/Styles.css" text="Proceed to Payment">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="413.0" maxHeight="100.0" maxWidth="206.0" mnemonicParsing="false" onAction="#startAction" prefHeight="60.0" prefWidth="138.0" stylesheets="@../styles/Styles.css" text="Start Over">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Separator layoutX="341.0" layoutY="-137.0" orientation="VERTICAL" prefHeight="600.0" rotate="90.0" />
+      <Label fx:id="ticketMovie" alignment="CENTER" layoutX="28.0" layoutY="14.0" prefHeight="40.0" prefWidth="630.0" text="Movie" textAlignment="CENTER">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Separator layoutX="337.0" layoutY="-246.0" orientation="VERTICAL" prefHeight="600.0" rotate="90.0" />
+      <Label fx:id="ticketDate" alignment="CENTER_RIGHT" layoutX="64.0" layoutY="57.0" prefHeight="40.0" prefWidth="216.0" text="DATE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="ticketTime" layoutX="443.0" layoutY="57.0" prefHeight="40.0" prefWidth="200.0" text="TIME">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="adultNumber" alignment="CENTER" layoutX="285.0" layoutY="163.0" prefHeight="45.0" prefWidth="58.0" text="0">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="seniorNumber" alignment="CENTER" layoutX="285.0" layoutY="222.0" prefHeight="45.0" prefWidth="58.0" text="0">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="veteranNumber" alignment="CENTER" layoutX="285.0" layoutY="283.0" prefHeight="45.0" prefWidth="58.0" text="0">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="childNumber" alignment="CENTER" layoutX="285.0" layoutY="343.0" prefHeight="45.0" prefWidth="58.0" text="0">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceOne" alignment="CENTER" layoutX="443.0" layoutY="171.0" prefHeight="29.0" prefWidth="85.0" text="-">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceTwo" alignment="CENTER" layoutX="443.0" layoutY="230.0" prefHeight="29.0" prefWidth="85.0" text="-">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceAddOne" alignment="CENTER" layoutX="556.0" layoutY="171.0" prefHeight="29.0" prefWidth="85.0" text="-">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceAddTwo" alignment="CENTER" layoutX="556.0" layoutY="235.0" prefHeight="29.0" prefWidth="85.0" text="-">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceAddThree" alignment="CENTER" layoutX="556.0" layoutY="290.0" prefHeight="29.0" prefWidth="85.0" text="-">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceThree" alignment="CENTER" layoutX="441.0" layoutY="290.0" prefHeight="29.0" prefWidth="85.0" text="-">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceAddFour" alignment="CENTER" layoutX="556.0" layoutY="350.0" prefHeight="29.0" prefWidth="85.0" text="-">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceFour" alignment="CENTER" layoutX="443.0" layoutY="350.0" prefHeight="29.0" prefWidth="85.0" text="-">
+         <font>
+            <Font name="Arial" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceTotal" alignment="CENTER" layoutX="528.0" layoutY="422.0" prefHeight="42.0" prefWidth="154.0" text="-">
+         <font>
+            <Font name="Arial" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

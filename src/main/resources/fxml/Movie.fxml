@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.cinema.FXMLMovieController">
+    <children>
+       
+        <Button layoutX="77.0" layoutY="442.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#goBack" prefHeight="44.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="Back">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button layoutX="471.0" layoutY="442.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#startAction" prefHeight="44.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="Start Over">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Label fx:id="todayTitle" layoutX="154.0" layoutY="14.0" prefHeight="50.0" prefWidth="449.0" text="d" textAlignment="CENTER">
+            <font>
+                <Font name="Arial" size="26.0" />
+            </font> 
+        </Label>
+        <Button fx:id="movie6" layoutX="495.0" layoutY="217.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#movieSix" prefHeight="66.0" prefWidth="179.0" stylesheets="@../styles/Styles.css" text="Movie 6">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="movie5" layoutX="265.0" layoutY="217.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#movieFive" prefHeight="66.0" prefWidth="179.0" stylesheets="@../styles/Styles.css" text="Movie 5">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="movie3" layoutX="494.0" layoutY="119.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#movieThree" prefHeight="66.0" prefWidth="179.0" stylesheets="@../styles/Styles.css" text="Movie 3">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="movie4" layoutX="26.0" layoutY="217.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#movieFour" prefHeight="66.0" prefWidth="179.0" stylesheets="@../styles/Styles.css" text="Movie 4">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="movie2" layoutX="264.0" layoutY="119.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#movieTwo" prefHeight="66.0" prefWidth="179.0" stylesheets="@../styles/Styles.css" text="Movie 2">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="movie1" layoutX="24.0" layoutY="119.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#movieOne" prefHeight="66.0" prefWidth="179.0" stylesheets="@../styles/Styles.css" text="Movie 1">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="movie7" layoutX="26.0" layoutY="315.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#movieSeven" prefHeight="66.0" prefWidth="179.0" stylesheets="@../styles/Styles.css" text="Movie 7">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="movie8" layoutX="266.0" layoutY="315.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#movieEight" prefHeight="66.0" prefWidth="179.0" stylesheets="@../styles/Styles.css" text="Movie 8">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="movie9" layoutX="496.0" layoutY="315.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#movieNine" prefHeight="66.0" prefWidth="179.0" stylesheets="@../styles/Styles.css" text="Movie 9">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+      <Separator layoutX="26.0" layoutY="84.0" prefHeight="0.0" prefWidth="644.0" />
+      <Separator layoutX="24.0" layoutY="403.0" prefHeight="0.0" prefWidth="644.0" />
+     
+     
+    </children>
+</Pane>

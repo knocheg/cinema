@@ -1,0 +1,21 @@
+.button {
+    
+    -fx-background-color: 
+        linear-gradient(#ff5400, #be1d00);
+    -fx-background-insets: 0,1,4,5,6;
+    -fx-background-radius: 9,8,5,4,3;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);
+	-fx-width: 100px;
+}
+.root {
+    -fx-background-color: white;
+}
+
+
+
+
+
