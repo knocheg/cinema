@@ -49,7 +49,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Text fill="#00000080" layoutX="511.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MM/YY" textAlignment="CENTER" wrappingWidth="88.0">
+      <Text fill="#00000080" layoutX="511.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YYYY-MM-DD" textAlignment="CENTER" wrappingWidth="125.0">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
@@ -91,6 +91,11 @@
       </Label>
       <Separator layoutX="333.0" layoutY="-244.0" orientation="VERTICAL" prefHeight="600.0" rotate="90.0" />
       <Separator layoutX="150.0" layoutY="1.0" orientation="VERTICAL" prefHeight="235.0" prefWidth="11.0" rotate="90.0" />
+      <Label fx:id="authorize" layoutX="209.0" layoutY="429.0" prefHeight="39.0" prefWidth="172.0" textAlignment="CENTER" textFill="#da0909" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
       
    </children>
 </Pane>

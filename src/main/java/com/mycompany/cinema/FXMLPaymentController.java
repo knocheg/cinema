@@ -38,7 +38,7 @@ public class FXMLPaymentController implements Initializable {
 
     //Labels----------------->
     @FXML
-    public Label movieTitle, dateTitle, priceTitle, timeTitle, totalPrice;
+    public Label movieTitle, dateTitle, priceTitle, timeTitle, totalPrice, authorize;
     @FXML
     public TextField nameOnCard, creditCardNumber, expirationDateNumber, cardPin;
 
@@ -69,7 +69,7 @@ public class FXMLPaymentController implements Initializable {
         dateTitle.setText(getDate());
         timeTitle.setText(getTime());
         priceTitle.setText(getPrice());
-
+        
     }
 
     //getting names from text fields
@@ -93,7 +93,6 @@ public class FXMLPaymentController implements Initializable {
     }
 
     public void creditCardAuth() throws IOException {
-        String credit1;
 
         String runSQL = String.format("SELECT * FROM CREDIT_CARD WHERE CC_EXP_DATE = '%s' AND CC_NUMBER = %s", expirationNumber, creditNumber);
         System.out.println(expirationNumber);
@@ -138,6 +137,8 @@ public class FXMLPaymentController implements Initializable {
             System.out.println("success");
 
         } else {
+            authorize.setText("Credit Card Not Authorized,! Try Again");
+
             System.out.println("no success");
         }
 
