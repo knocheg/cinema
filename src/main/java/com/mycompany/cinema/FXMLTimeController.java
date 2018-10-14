@@ -58,43 +58,49 @@ public class FXMLTimeController implements Initializable {
     @FXML
     private void timeOne(ActionEvent event) throws Exception {
         timePicked = time1String;//set Time
-        mainApp.initialLayout("/fxml/Ticket.fxml");
         showIDPicked = showID1String;
+        mainApp.initialLayout("/fxml/Ticket.fxml");
+        
     }
 
     @FXML
     private void timeTwo(ActionEvent event) throws Exception {
         timePicked = time2String;//set Time
-        mainApp.initialLayout("/fxml/Ticket.fxml");
         showIDPicked = showID2String;
+        mainApp.initialLayout("/fxml/Ticket.fxml");
+        
     }
 
     @FXML
     private void timeThree(ActionEvent event) throws Exception {
         timePicked = time3String;//set Time
-        mainApp.initialLayout("/fxml/Ticket.fxml");
         showIDPicked = showID3String;
+        mainApp.initialLayout("/fxml/Ticket.fxml");
+        
     }
 
     @FXML
     private void timeFour(ActionEvent event) throws Exception {
         timePicked = time4String;//set Time
-        mainApp.initialLayout("/fxml/Ticket.fxml");
         showIDPicked = showID4String;
+        mainApp.initialLayout("/fxml/Ticket.fxml");
+        
     }
 
     @FXML
     private void timeFive(ActionEvent event) throws Exception {
         timePicked = time5String;//set Time
-        mainApp.initialLayout("/fxml/Ticket.fxml");
         showIDPicked = showID5String;
+        mainApp.initialLayout("/fxml/Ticket.fxml");
+        
     }
 
     @FXML
     private void timeSix(ActionEvent event) throws Exception {
         timePicked = time6String;//set Time
-        mainApp.initialLayout("/fxml/Ticket.fxml");
         showIDPicked = showID6String;
+        mainApp.initialLayout("/fxml/Ticket.fxml");
+        
     }
 
     //getters--------------================+++++++++++++++++++
