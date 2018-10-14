@@ -62,7 +62,7 @@ public class FXMLPaymentController implements Initializable {
         dateTitle.setText(getDate());
         timeTitle.setText(getTime());
         priceTitle.setText(getPrice());
-        
+
     }
 
     //getting names from text fields

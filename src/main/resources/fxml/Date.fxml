@@ -47,7 +47,7 @@
                 <Font size="16.0" />
             </font>
         </Button>
-      <Separator layoutX="32.0" layoutY="81.0" prefHeight="0.0" prefWidth="634.0" />
-      <Separator layoutX="33.0" layoutY="371.0" prefHeight="0.0" prefWidth="634.0" />
+        <Separator layoutX="32.0" layoutY="81.0" prefHeight="0.0" prefWidth="634.0" />
+        <Separator layoutX="33.0" layoutY="371.0" prefHeight="0.0" prefWidth="634.0" />
     </children>
 </Pane>

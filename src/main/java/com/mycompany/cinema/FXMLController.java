@@ -31,7 +31,7 @@ public class FXMLController implements Initializable {
     @FXML
     private void startAction(ActionEvent event) throws Exception {
 
-         mainApp.initialLayout("/fxml/Scene.fxml");
+        mainApp.initialLayout("/fxml/Scene.fxml");
 
     }
 
@@ -40,10 +40,8 @@ public class FXMLController implements Initializable {
 
         mainApp.initialLayout("/fxml/Date.fxml");
     }
-    
-    
-    //This buttons need to remove
 
+    //This buttons need to remove
     @FXML
     private void goThank(ActionEvent event) throws Exception {
 

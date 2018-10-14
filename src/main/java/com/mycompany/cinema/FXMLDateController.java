@@ -57,7 +57,7 @@ public class FXMLDateController implements Initializable {
     private void todayButton(ActionEvent event) throws Exception {
         dayPicked = todayString; //get day that they picked must do for all buttons
         titlePicked = todayOnlyButton;
-       
+
         mainApp.viewMovieScene();//go to movie Scene
     }
 
@@ -134,10 +134,10 @@ public class FXMLDateController implements Initializable {
 
     //setting the titles of the buttons
     public void setDateTitles() {
-       
+
         DateFormat df2 = new SimpleDateFormat("EE, dd");
         Calendar todayDate = Calendar.getInstance();
-       
+
         todayOnlyButton = df2.format(todayDate.getTime());
 
         //Date Button Titles
@@ -146,29 +146,30 @@ public class FXMLDateController implements Initializable {
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
         topCenterButton.setText(df2.format(todayDate.getTime()));
         topCenterTitle = df2.format(todayDate.getTime());
-       
+
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
         topRightButton.setText(df2.format(todayDate.getTime()));
         topRightTitle = df2.format(todayDate.getTime());
-        
+
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
         bottomLeftButton.setText(df2.format(todayDate.getTime()));
         bottomLeftTitle = df2.format(todayDate.getTime());
-       
+
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
         bottomCenterButton.setText(df2.format(todayDate.getTime()));
         bottomCenterTitle = df2.format(todayDate.getTime());
-       
+
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
         bottomRightButton.setText(df2.format(todayDate.getTime()));
         bottomRightTitle = df2.format(todayDate.getTime());
-        
+
     }
-        //setting the titles of the buttons
+    //setting the titles of the buttons
+
     public void setDates() {
         DateFormat df = new SimpleDateFormat("dd MM yyyy");
         Calendar todayDate = Calendar.getInstance();
@@ -177,23 +178,23 @@ public class FXMLDateController implements Initializable {
         todayButton.setText(todayOnlyButton);
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
-       
+
         topCenterString = df.format(todayDate.getTime());
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
-       
+
         topRightString = df.format(todayDate.getTime());
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
-        
+
         bottomLeftString = df.format(todayDate.getTime());
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
-       
+
         bottomCenterString = df.format(todayDate.getTime());
         //next
         todayDate.add(Calendar.DAY_OF_MONTH, 1);
-       
+
         bottomRightString = df.format(todayDate.getTime());
     }
 
@@ -202,7 +203,8 @@ public class FXMLDateController implements Initializable {
         String date = dayPicked;
         return date;//return the day that the user picked
     }
-    public String getTitleDate(){
+
+    public String getTitleDate() {
         String titleDate = titlePicked;
         System.out.println(titlePicked);
         return titleDate;

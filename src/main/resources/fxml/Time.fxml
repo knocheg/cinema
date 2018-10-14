@@ -6,66 +6,66 @@
 <?import javafx.scene.layout.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.cinema.FXMLTimeController">
-   <children>
-             <Button fx:id="time1" layoutX="76.0" layoutY="188.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeOne" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time1">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="time2" layoutX="274.0" layoutY="188.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeTwo" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time2">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="time4" layoutX="77.0" layoutY="286.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeFour" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time4">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="time3" layoutX="470.0" layoutY="188.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeThree" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time3">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="time5" layoutX="275.0" layoutY="286.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeFive" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time5">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="time6" layoutX="471.0" layoutY="286.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeSix" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time6">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button layoutX="470.0" layoutY="429.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#startAction" prefHeight="44.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="Start Over">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button layoutX="76.0" layoutY="429.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#goBack" prefHeight="44.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="Back">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Label fx:id="datePicked" alignment="CENTER" layoutX="269.0" layoutY="84.0" prefHeight="39.0" prefWidth="162.0" text="DATE">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
-      <Label fx:id="moviePicked" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="14.0" prefHeight="62.0" prefWidth="680.0" text="MOVIE">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
-      <Text layoutX="191.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Show Time" textAlignment="CENTER" wrappingWidth="319.0">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Text>
-      <Separator layoutX="78.0" layoutY="75.0" prefHeight="0.0" prefWidth="571.0" />
-      <Separator layoutX="139.0" layoutY="170.0" prefHeight="3.0" prefWidth="423.0" />
-      <Separator layoutX="67.0" layoutY="387.0" prefHeight="0.0" prefWidth="571.0" />
-      <Separator layoutX="141.0" layoutY="129.0" prefHeight="3.0" prefWidth="423.0" />
+    <children>
+        <Button fx:id="time1" layoutX="76.0" layoutY="188.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeOne" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time1">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="time2" layoutX="274.0" layoutY="188.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeTwo" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time2">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="time4" layoutX="77.0" layoutY="286.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeFour" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time4">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="time3" layoutX="470.0" layoutY="188.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeThree" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time3">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="time5" layoutX="275.0" layoutY="286.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeFive" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time5">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="time6" layoutX="471.0" layoutY="286.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#timeSix" prefHeight="66.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="time6">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button layoutX="470.0" layoutY="429.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#startAction" prefHeight="44.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="Start Over">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button layoutX="76.0" layoutY="429.0" maxHeight="100.0" maxWidth="200.0" mnemonicParsing="false" onAction="#goBack" prefHeight="44.0" prefWidth="154.0" stylesheets="@../styles/Styles.css" text="Back">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Label fx:id="datePicked" alignment="CENTER" layoutX="269.0" layoutY="84.0" prefHeight="39.0" prefWidth="162.0" text="DATE">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <Label fx:id="moviePicked" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="14.0" prefHeight="62.0" prefWidth="680.0" text="MOVIE">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <Text layoutX="191.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Show Time" textAlignment="CENTER" wrappingWidth="319.0">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Text>
+        <Separator layoutX="78.0" layoutY="75.0" prefHeight="0.0" prefWidth="571.0" />
+        <Separator layoutX="139.0" layoutY="170.0" prefHeight="3.0" prefWidth="423.0" />
+        <Separator layoutX="67.0" layoutY="387.0" prefHeight="0.0" prefWidth="571.0" />
+        <Separator layoutX="141.0" layoutY="129.0" prefHeight="3.0" prefWidth="423.0" />
 
-   </children>
+    </children>
 </Pane>

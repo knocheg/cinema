@@ -42,8 +42,8 @@ public class FXMLTimeController implements Initializable {
     @FXML
     public Button time1, time2, time3, time4, time5, time6;
     public static String time1String, time2String, time3String, time4String, time5String, time6String, timePicked;
-    public static String theater1String, theater2String,theater3String,theater4String,theater5String,theater6String;
-    public static String showID1String,showID2String,showID3String,showID4String, showID5String, showID6String;        
+    public static String theater1String, theater2String, theater3String, theater4String, theater5String, theater6String;
+    public static String showID1String, showID2String, showID3String, showID4String, showID5String, showID6String;
     //TITLES
     public Label moviePicked = new Label();
     public Label datePicked = new Label();
@@ -125,7 +125,7 @@ public class FXMLTimeController implements Initializable {
     @Override
 
     public void initialize(URL url, ResourceBundle rb) {
-        
+
         //Populate lables
         datePicked.setText(date.getTitleDate());
         moviePicked.setText(getMovie());
@@ -139,46 +139,46 @@ public class FXMLTimeController implements Initializable {
     }
 
     public void setTimeTitles() {
-       if(!time1String.isEmpty() && time1String != null) {
-           time1.setVisible(true);
-           time1.setText("theater: "+ theater1String+ " " + time1String);
-       } else {
-           time1.setVisible(false);
-                   }
-        
-     if(!time2String.isEmpty() && time2String != null) {
-           time2.setVisible(true);
-           time2.setText("theater: "+ theater2String+ " " + time2String);
-       } else {
-           time2.setVisible(false);
-              }
-     if(!time3String.isEmpty() && time3String != null) {
-           time3.setVisible(true);
-           time3.setText("theater: "+ theater3String+ " " + time3String);
-       } else {
-           time3.setVisible(false);
-              }
-        
-    if(!time4String.isEmpty() && time4String != null) {
-           time4.setVisible(true);
-           time4.setText("theater: "+ theater4String+ " " + time4String);
-       } else {
-           time4.setVisible(false);
-              }
-           
-    if(!time5String.isEmpty() && time5String != null) {
-           time5.setVisible(true);
-           time5.setText("theater: "+ theater5String+ " " + time5String);
-       } else {
-           time5.setVisible(false);
-              }  
-    
-    if(!time6String.isEmpty() && time6String != null) {
-           time6.setVisible(true);
-           time6.setText("theater: "+ theater6String+ " " + time6String);
-       } else {
-           time6.setVisible(false); 
-              }
+        if (!time1String.isEmpty() && time1String != null) {
+            time1.setVisible(true);
+            time1.setText("theater: " + theater1String + " " + time1String);
+        } else {
+            time1.setVisible(false);
+        }
+
+        if (!time2String.isEmpty() && time2String != null) {
+            time2.setVisible(true);
+            time2.setText("theater: " + theater2String + " " + time2String);
+        } else {
+            time2.setVisible(false);
+        }
+        if (!time3String.isEmpty() && time3String != null) {
+            time3.setVisible(true);
+            time3.setText("theater: " + theater3String + " " + time3String);
+        } else {
+            time3.setVisible(false);
+        }
+
+        if (!time4String.isEmpty() && time4String != null) {
+            time4.setVisible(true);
+            time4.setText("theater: " + theater4String + " " + time4String);
+        } else {
+            time4.setVisible(false);
+        }
+
+        if (!time5String.isEmpty() && time5String != null) {
+            time5.setVisible(true);
+            time5.setText("theater: " + theater5String + " " + time5String);
+        } else {
+            time5.setVisible(false);
+        }
+
+        if (!time6String.isEmpty() && time6String != null) {
+            time6.setVisible(true);
+            time6.setText("theater: " + theater6String + " " + time6String);
+        } else {
+            time6.setVisible(false);
+        }
     }
 
     //Retrieving times Data from the database
@@ -208,32 +208,25 @@ public class FXMLTimeController implements Initializable {
             //stablish connection
             Connection conn = DriverManager.getConnection(URL, USER, PASS);
             Statement stmt = conn.createStatement(); //set statements
-           
-            
-            
-            
-            
-            
-            SQLTORUN = "SELECT SHOW_TIME_ONLY, SHOW_ID, THEATER  FROM MOVIES,SHOWS WHERE MOVIE_ID = SHOW_MOVIE_ID AND SHOW_DATE_ONLY = ";//sq; statement with all but date
-            SQLTORUN = SQLTORUN + "'" + getDate() + "'" + "  AND MOVIE_TITLE = "+ "'" + movie.getMovieString()+ "';"; // need to get the date selected in the DateController in dd mm yyyy format into this statement  help!!!!
-            System.out.println(SQLTORUN);
- 
 
-            
+            SQLTORUN = "SELECT SHOW_TIME_ONLY, SHOW_ID, THEATER  FROM MOVIES,SHOWS WHERE MOVIE_ID = SHOW_MOVIE_ID AND SHOW_DATE_ONLY = ";//sq; statement with all but date
+            SQLTORUN = SQLTORUN + "'" + getDate() + "'" + "  AND MOVIE_TITLE = " + "'" + movie.getMovieString() + "';"; // need to get the date selected in the DateController in dd mm yyyy format into this statement  help!!!!
+            System.out.println(SQLTORUN);
+
             ResultSet rs = stmt.executeQuery(SQLTORUN);//compile and execute statements
             //setting the button texts with movies as it scans the database;
             while (rs.next()) {
                 count += 1;
                 showTime = rs.getString(1);  // SHOW_TIME_ONLY from DB
                 System.out.println(showTime);
-                showID =  rs.getString(2);  // SHOW_ID from DB
-                theater =  rs.getString(3);  // THEATER from DB
+                showID = rs.getString(2);  // SHOW_ID from DB
+                theater = rs.getString(3);  // THEATER from DB
                 //setting text to buttons and movie texts
                 if (count == 1) {
                     //set Varialble
                     time1String = showTime;
                     theater1String = theater;
-                    showID1String = showID;        
+                    showID1String = showID;
                 } else if (count == 2) {
                     //set Varialble
                     time2String = showTime;
@@ -259,7 +252,7 @@ public class FXMLTimeController implements Initializable {
                     time6String = showTime;
                     theater6String = theater;
                     showID6String = showID;
-                } 
+                }
             }
 
         } catch (SQLException ex) {
@@ -267,7 +260,7 @@ public class FXMLTimeController implements Initializable {
         }
     }
 
- public void cleanTimeButtons() {
+    public void cleanTimeButtons() {
         time1String = "";
         time2String = "";
         time3String = "";
