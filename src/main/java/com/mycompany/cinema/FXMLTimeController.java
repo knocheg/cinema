@@ -5,7 +5,23 @@
  */
 package com.mycompany.cinema;
 
+import static com.mycompany.cinema.FXMLMovieController.movie1String;
+import static com.mycompany.cinema.FXMLMovieController.movie2String;
+import static com.mycompany.cinema.FXMLMovieController.movie3String;
+import static com.mycompany.cinema.FXMLMovieController.movie4String;
+import static com.mycompany.cinema.FXMLMovieController.movie5String;
+import static com.mycompany.cinema.FXMLMovieController.movie6String;
+import static com.mycompany.cinema.FXMLMovieController.movie7String;
+import static com.mycompany.cinema.FXMLMovieController.movie8String;
+import static com.mycompany.cinema.FXMLMovieController.movie9String;
+import com.mysql.jdbc.StringUtils;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -107,28 +123,144 @@ public class FXMLTimeController implements Initializable {
     @Override
 
     public void initialize(URL url, ResourceBundle rb) {
-
+        
+        //Populate lables
         datePicked.setText(date.getTitleDate());
         moviePicked.setText(getMovie());
+        //Clean Button text in case back option was exercised
+        cleanTimeButtons();
+        //Read Database to get showtimes/theater and ShowID 
+        databaseSourceTimeGarrett();//Load data from server
+        //Populate the buttons
         setTimeTitles();
 
     }
 
     public void setTimeTitles() {
-
-        time1String = "7:30PM";
-        time1.setText(time1String);
-        time2String = "7:30PM";
-        time2.setText(time2String);
-        time3String = "7:30PM";
-        time3.setText(time3String);
-        time4String = "7:30PM";
-        time4.setText(time4String);
-        time5String = "7:30PM";
-        time5.setText(time5String);
-        time6String = "7:30PM";
-        time6.setText(time6String);
-
+       if(!time1String.isEmpty() && time1String != null) {
+           time1.setVisible(true);
+           time1.setText(time1String);
+           System.out.println("time for button1" +time1String);
+           } else {
+           time1.setVisible(false);
+           System.out.println("got here");
+                   }
+        
+     if(!time2String.isEmpty() && time2String != null) {
+           time2.setVisible(true);
+           time2.setText(time2String);
+       } else {
+           time2.setVisible(false);
+              }
+     if(!time3String.isEmpty() && time3String != null) {
+           time3.setVisible(true);
+           time3.setText(time3String);
+       } else {
+           time3.setVisible(false);
+              }
+        
+    if(!time4String.isEmpty() && time4String != null) {
+           time4.setVisible(true);
+           time4.setText(time4String);
+       } else {
+           time4.setVisible(false);
+              }
+           
+    if(!time5String.isEmpty() && time5String != null) {
+           time5.setVisible(true);
+           time5.setText(time5String);
+       } else {
+           time5.setVisible(false);
+              }  
+    
+    if(!time6String.isEmpty() && time6String != null) {
+           time6.setVisible(true);
+           time6.setText(time6String);
+       } else {
+           time6.setVisible(false); 
+              }
     }
 
+    //Retrieving times Data from the database
+    //Based on the previously selected Date and Movie
+    //Need to also get theater as the same show could be 
+    //showing in theater 1 and 2 at the same time
+    public void databaseSourceTimeGarrett() {
+        int count = 0;
+        String showTime;
+        String theater;
+        String showID;
+        //Registering the Driver
+        try {
+            Driver myDriver = new com.mysql.jdbc.Driver();
+            DriverManager.registerDriver(myDriver);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            System.out.println("Driver Not Registered - Check you mysql-connector file is located under the CLASSPATH OF JDK");
+        }
+        ///Connecting to the Garrett server -database-
+        try {
+            //database credentials
+            String URL = "jdbc:mysql://group-g.g-knoche.com/CINEMA";
+            String USER = "rafael";
+            String PASS = "rafaelcmsc495";
+            String SQLTORUN = ""; //this is the string we will build the query in            
+            //stablish connection
+            Connection conn = DriverManager.getConnection(URL, USER, PASS);
+            Statement stmt = conn.createStatement(); //set statements
+           
+            
+            
+            
+            
+            
+            SQLTORUN = "SELECT SHOW_TIME_ONLY, SHOW_ID, THEATER  FROM MOVIES,SHOWS WHERE MOVIE_ID = SHOW_MOVIE_ID AND SHOW_DATE_ONLY = ";//sq; statement with all but date
+            SQLTORUN = SQLTORUN + "'" + getDate() + "'" + "  AND MOVIE_TITLE = "+ "'" + movie.getMovieString()+ "';"; // need to get the date selected in the DateController in dd mm yyyy format into this statement  help!!!!
+            System.out.println(SQLTORUN);
+ 
+
+            
+            ResultSet rs = stmt.executeQuery(SQLTORUN);//compile and execute statements
+            //setting the button texts with movies as it scans the database;
+            while (rs.next()) {
+                count += 1;
+                showTime = rs.getString(1);  // SHOW_TIME_ONLY from DB
+                System.out.println(showTime);
+                showID =  rs.getString(2);  // SHOW_ID from DB
+                theater =  rs.getString(2);  // THEATER from DB
+                //setting text to buttons and movie texts
+                if (count == 1) {
+                    //set Varialble
+                    time1String = showTime;
+                } else if (count == 2) {
+                    //set Varialble
+                    time2String = showTime;
+                } else if (count == 3) {
+                    //set Varialble
+                    time3String = showTime;
+                } else if (count == 4) {
+                    //set Varialble
+                    time4String = showTime;
+                } else if (count == 5) {
+                    //set Varialble
+                    time5String = showTime;
+                } else if (count == 6) {
+                    //set Varialble
+                    time6String = showTime;
+                } 
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+
+ public void cleanTimeButtons() {
+        time1String = "";
+        time2String = "";
+        time3String = "";
+        time4String = "";
+        time5String = "";
+        time6String = "";
+    }
 }
