@@ -33,7 +33,11 @@ public class FXMLTicketController implements Initializable {
     //Price Floats
     public double adultPrice, seniorPrice, veteranPrice, childPrice, adultTotal, seniorTotal, veteranTotal, childTotal, totalPrice;
     public static double total;
-
+    //the following are the multipliers to use to determine ticket prices
+    public static double seniorDiscount = .20;
+    public static double childDiscount = .30;
+    public static double veteranDiscount = .10;
+            
     //Action Buttons---------------------------------------------------->
     @FXML
     private void startAction(ActionEvent event) throws Exception {
@@ -155,13 +159,13 @@ public class FXMLTicketController implements Initializable {
 
     //Set Prices--------------------------------------------------->
     public void setDefaulPrices() {
-        adultPrice = 12.99;
+        adultPrice = 10.00;
         priceOne.setText("$" + Double.toString(adultPrice));
-        seniorPrice = 5.99;
+        seniorPrice = adultPrice - seniorDiscount*adultPrice;
         priceTwo.setText("$" + Double.toString(seniorPrice));
-        veteranPrice = 8.99;
+        veteranPrice = adultPrice - veteranDiscount*adultPrice;
         priceThree.setText("$" + Double.toString(veteranPrice));
-        childPrice = 5.99;
+        childPrice = adultPrice - childDiscount*adultPrice;
         priceFour.setText("$" + Double.toString(childPrice));
 
     }
