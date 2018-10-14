@@ -12,18 +12,29 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import java.sql.*;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.*;
+import java.util.*;
+import javafx.event.ActionEvent;
+import javafx.fxml.*;
+import javafx.scene.control.*;
+import org.apache.commons.io.FileUtils;
+import java.util.Random;
 
 /**
  *
  * @author rgonz
  */
 public class FXMLTicketController implements Initializable {
-
+    //Buttons
+    public Button payButton;
     //Class Communication
     MainApp mainApp = new MainApp();//LOAD
     FXMLDateController date = new FXMLDateController();//get DATE
     FXMLMovieController movie = new FXMLMovieController();//get MOVIE
     FXMLTimeController time = new FXMLTimeController();// get Time
+    
 
     //Tittle Labels---------------------------------->//Quantity Labels ----------------------------------->
     public Label ticketMovie, ticketDate, ticketTime, adultNumber, seniorNumber, veteranNumber, childNumber;
@@ -38,6 +49,7 @@ public class FXMLTicketController implements Initializable {
     public static double seniorDiscount = .20;
     public static double childDiscount = .30;
     public static double veteranDiscount = .10;
+    
             
     //Action Buttons---------------------------------------------------->
     @FXML
@@ -46,10 +58,11 @@ public class FXMLTicketController implements Initializable {
     }
 
     @FXML
-    private void payButton(ActionEvent event) throws Exception {
+    public void payButton(ActionEvent event) throws Exception {
         total = totalPrice;
+        if(total > 0){
         mainApp.initialLayout("/fxml/Payment.fxml");
-
+        }
     }
 
     //Adult------------------------------------------------------------->
@@ -151,6 +164,7 @@ public class FXMLTicketController implements Initializable {
         ticketMovie.setText(getMovie());//set movie title
         ticketDate.setText(date.getTitleDate());//set date title
         ticketTime.setText(getTime());//set time title
+        
         adult = 0;
         senior = 0;
         veteran = 0;
@@ -175,8 +189,8 @@ public class FXMLTicketController implements Initializable {
     public void totalPrice() {
         totalPrice = adultTotal + veteranTotal + seniorTotal + childTotal;
         priceTotal.setText(String.format("$%.2f", totalPrice));
-
-    }
+             }
+    
 
     //getters-------------------------->
     public String getDate() {
