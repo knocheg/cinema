@@ -87,7 +87,7 @@ public class FXMLPaymentController implements Initializable {
 
     public void creditCardAuth() throws IOException {
 
-        String runSQL = String.format("SELECT * FROM CREDIT_CARD WHERE CC_EXP_DATE = '%s' AND CC_NUMBER = %s", expirationNumber, creditNumber);
+        String runSQL = String.format("SELECT * FROM CREDIT_CARD WHERE CC_EXP_DATE = '%s' AND CC_NUMBER = '%s'", expirationNumber, creditNumber);
         System.out.println(expirationNumber);
         System.out.println(creditNumber);
         //Registering the Driver
