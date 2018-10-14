@@ -42,6 +42,8 @@ public class FXMLTimeController implements Initializable {
     @FXML
     public Button time1, time2, time3, time4, time5, time6;
     public static String time1String, time2String, time3String, time4String, time5String, time6String, timePicked;
+    public static String theater1String, theater2String,theater3String,theater4String,theater5String,theater6String;
+    public static String showID1String,showID2String,showID3String,showID4String, showID5String, showID6String;        
     //TITLES
     public Label moviePicked = new Label();
     public Label datePicked = new Label();
@@ -139,43 +141,41 @@ public class FXMLTimeController implements Initializable {
     public void setTimeTitles() {
        if(!time1String.isEmpty() && time1String != null) {
            time1.setVisible(true);
-           time1.setText(time1String);
-           System.out.println("time for button1" +time1String);
-           } else {
+           time1.setText("theater: "+ theater1String+ " " + time1String);
+       } else {
            time1.setVisible(false);
-           System.out.println("got here");
                    }
         
      if(!time2String.isEmpty() && time2String != null) {
            time2.setVisible(true);
-           time2.setText(time2String);
+           time2.setText("theater: "+ theater2String+ " " + time2String);
        } else {
            time2.setVisible(false);
               }
      if(!time3String.isEmpty() && time3String != null) {
            time3.setVisible(true);
-           time3.setText(time3String);
+           time3.setText("theater: "+ theater3String+ " " + time3String);
        } else {
            time3.setVisible(false);
               }
         
     if(!time4String.isEmpty() && time4String != null) {
            time4.setVisible(true);
-           time4.setText(time4String);
+           time4.setText("theater: "+ theater4String+ " " + time4String);
        } else {
            time4.setVisible(false);
               }
            
     if(!time5String.isEmpty() && time5String != null) {
            time5.setVisible(true);
-           time5.setText(time5String);
+           time5.setText("theater: "+ theater5String+ " " + time5String);
        } else {
            time5.setVisible(false);
               }  
     
     if(!time6String.isEmpty() && time6String != null) {
            time6.setVisible(true);
-           time6.setText(time6String);
+           time6.setText("theater: "+ theater6String+ " " + time6String);
        } else {
            time6.setVisible(false); 
               }
@@ -227,26 +227,38 @@ public class FXMLTimeController implements Initializable {
                 showTime = rs.getString(1);  // SHOW_TIME_ONLY from DB
                 System.out.println(showTime);
                 showID =  rs.getString(2);  // SHOW_ID from DB
-                theater =  rs.getString(2);  // THEATER from DB
+                theater =  rs.getString(3);  // THEATER from DB
                 //setting text to buttons and movie texts
                 if (count == 1) {
                     //set Varialble
                     time1String = showTime;
+                    theater1String = theater;
+                    showID1String = showID;        
                 } else if (count == 2) {
                     //set Varialble
                     time2String = showTime;
+                    theater2String = theater;
+                    showID2String = showID;
                 } else if (count == 3) {
                     //set Varialble
                     time3String = showTime;
+                    theater3String = theater;
+                    showID3String = showID;
                 } else if (count == 4) {
                     //set Varialble
                     time4String = showTime;
+                    theater4String = theater;
+                    showID4String = showID;
                 } else if (count == 5) {
                     //set Varialble
                     time5String = showTime;
+                    theater5String = theater;
+                    showID5String = showID;
                 } else if (count == 6) {
                     //set Varialble
                     time6String = showTime;
+                    theater6String = theater;
+                    showID6String = showID;
                 } 
             }
 
