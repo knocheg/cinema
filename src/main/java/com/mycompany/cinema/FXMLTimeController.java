@@ -5,15 +5,7 @@
  */
 package com.mycompany.cinema;
 
-import static com.mycompany.cinema.FXMLMovieController.movie1String;
-import static com.mycompany.cinema.FXMLMovieController.movie2String;
-import static com.mycompany.cinema.FXMLMovieController.movie3String;
-import static com.mycompany.cinema.FXMLMovieController.movie4String;
-import static com.mycompany.cinema.FXMLMovieController.movie5String;
-import static com.mycompany.cinema.FXMLMovieController.movie6String;
-import static com.mycompany.cinema.FXMLMovieController.movie7String;
-import static com.mycompany.cinema.FXMLMovieController.movie8String;
-import static com.mycompany.cinema.FXMLMovieController.movie9String;
+import static com.mycompany.cinema.FXMLMovieController.moviePicked;
 import com.mysql.jdbc.StringUtils;
 import java.net.URL;
 import java.sql.Connection;
@@ -44,6 +36,7 @@ public class FXMLTimeController implements Initializable {
     public static String time1String, time2String, time3String, time4String, time5String, time6String, timePicked;
     public static String theater1String, theater2String, theater3String, theater4String, theater5String, theater6String;
     public static String showID1String, showID2String, showID3String, showID4String, showID5String, showID6String;
+    public static String showIDPicked;
     //TITLES
     public Label moviePicked = new Label();
     public Label datePicked = new Label();
@@ -66,42 +59,42 @@ public class FXMLTimeController implements Initializable {
     private void timeOne(ActionEvent event) throws Exception {
         timePicked = time1String;//set Time
         mainApp.initialLayout("/fxml/Ticket.fxml");
-
+        showIDPicked = showID1String;
     }
 
     @FXML
     private void timeTwo(ActionEvent event) throws Exception {
         timePicked = time2String;//set Time
         mainApp.initialLayout("/fxml/Ticket.fxml");
-
+        showIDPicked = showID2String;
     }
 
     @FXML
     private void timeThree(ActionEvent event) throws Exception {
         timePicked = time3String;//set Time
         mainApp.initialLayout("/fxml/Ticket.fxml");
-
+        showIDPicked = showID3String;
     }
 
     @FXML
     private void timeFour(ActionEvent event) throws Exception {
         timePicked = time4String;//set Time
         mainApp.initialLayout("/fxml/Ticket.fxml");
-
+        showIDPicked = showID4String;
     }
 
     @FXML
     private void timeFive(ActionEvent event) throws Exception {
         timePicked = time5String;//set Time
         mainApp.initialLayout("/fxml/Ticket.fxml");
-
+        showIDPicked = showID5String;
     }
 
     @FXML
     private void timeSix(ActionEvent event) throws Exception {
         timePicked = time6String;//set Time
         mainApp.initialLayout("/fxml/Ticket.fxml");
-
+        showIDPicked = showID6String;
     }
 
     //getters--------------================+++++++++++++++++++
@@ -121,7 +114,13 @@ public class FXMLTimeController implements Initializable {
         String time = timePicked;
         return time;
     }
+ //getter method for showID of show picked
+    public String getshowIDString() {
+        String showID = showIDPicked;
 
+        return showID;//return the day that the user picked
+    }
+    
     @Override
 
     public void initialize(URL url, ResourceBundle rb) {
